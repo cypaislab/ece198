@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE 198: Object-Oriented Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+        }
+        .sidebar h2 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            background-color: #444444;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sidebar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li:hover {
+            background-color: #555555;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333333;
+        }
+        .section {
+            margin-bottom: 20px;
+            display: none; /* Hide sections by default */
+        }
+        .section.active {
+            display: block; /* Show the active section */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Sections</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('course-info')">Course Information</a></li>
+            <li><a href="#" onclick="showSection('syllabus')">Syllabus</a></li>
+            <li><a href="#" onclick="showSection('schedule')">Schedule</a></li>
+            <li><a href="#" onclick="showSection('resources')">Resources</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>ECE 198: Object-Oriented Programming</h1>
+        </header>
+
+        <section id="course-info" class="section">
+            <h2>Course Information</h2>
+            <p><strong>Instructor:</strong> [Your Name]</p>
+            <p><strong>Email:</strong> [Your Email]</p>
+            <p><strong>Office Hours:</strong> [Your Office Hours]</p>
+            <p><strong>Location:</strong> [Class Location]</p>
+        </section>
+
+        <section id="syllabus" class="section">
+            <h2>Syllabus</h2>
+            <ul>
+                <li>Introduction to Object-Oriented Programming</li>
+                <li>Classes and Objects</li>
+                <li>Inheritance and Polymorphism</li>
+                <li>Encapsulation and Abstraction</li>
+                <li>Advanced OOP Concepts</li>
+                <li>Project Work</li>
+                <li>Final Exam</li>
+            </ul>
+        </section>
+
+        <section id="schedule" class="section">
+            <h2>Class Schedule</h2>
+            <ul>
+                <li>Week 1: Introduction to OOP - Basics</li>
+                <li>Week 2: Classes and Objects</li>
+                <li>Week 3: Inheritance</li>
+                <li>Week 4: Polymorphism</li>
+                <li>Week 5: Encapsulation</li>
+                <li>Week 6: Abstraction</li>
+                <li>Week 7: Mid-term Project</li>
+                <li>Week 8: Advanced OOP</li>
+                <li>Week 9: Review and Project Work</li>
+                <li>Week 10: Final Exam</li>
+            </ul>
+        </section>
+
+        <section id="resources" class="section">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="#">Textbook: Learning Path: Getting Started with Python</a></li>
+                <li><a href="#">Python Documentation</a></li>
+                <li><a href="#">OOP Concepts and Tutorials</a></li>
+                <li><a href="#">Course Materials (Slides, Assignments, etc.)</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 [Your University Name]. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        // Show the first section by default
+        showSection('course-info');
+    </script>
+</body>
+</html>
