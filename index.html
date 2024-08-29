@@ -152,6 +152,14 @@
             });
 
             // Show the selected section
-            var activeSection = document.getElement
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        // Show the first section by default
+        showSection('course-info');
+    </script>
+</body>
+</html>
 
 
